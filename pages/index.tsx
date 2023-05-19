@@ -1,118 +1,160 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from 'next/image';
+import BRICSLogo from '../assets/images/brics.jpg';
+import W5FDCLogo from '../assets/images/Logo-W.png';
+import WDLogo from '../assets/images/logo.png';
+import PioneerLogo from '../assets/images/Pioneer.png';
+import SDG17Logo from '../assets/images/SDG 17.jpg';
+import SDG5Logo from '../assets/images/SDG 5.jpg';
+import SprowtLogo from '../assets/images/Sprowt.png';
+import BGLogo from '../assets/images/bg.png';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className='flex min-h-screen flex-col'>
+      <div
+        className={`flex-1 flex flex-col justify-center pt-8`}
+        style={{ background: `url(${BGLogo.src}) center / cover` }}
+      >
+        <header className='container mx-auto flex justify-between items-center lg:items-start px-8'>
+          <div className='flex flex-col'>
+            <Image width={200} src={WDLogo} alt='Sprowt Logo website-01' />
+            <span className='self-end -mt-4 font-medium text-xl'>
+              JUNE 21, 2023
+            </span>
+          </div>
+          <div className='flex'>
+            <svg
+              width='32'
+              height='28'
+              viewBox='0 0 32 28'
+              className='fill-main'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M0 25.143C0 26.4073 1.02143 27.4287 2.28571 27.4287H29.7143C30.9786 27.4287 32 26.4073 32 25.143C32 23.8787 30.9786 22.8573 29.7143 22.8573H2.28571C1.02143 22.8573 0 23.8787 0 25.143ZM0 13.7144C0 14.9787 1.02143 16.0001 2.28571 16.0001H29.7143C30.9786 16.0001 32 14.9787 32 13.7144C32 12.4501 30.9786 11.4287 29.7143 11.4287H2.28571C1.02143 11.4287 0 12.4501 0 13.7144ZM32 2.28585C32 1.02157 30.9786 0.000138283 29.7143 0.000138283H2.28571C1.02143 0.000138283 0 1.02157 0 2.28585C0 3.55014 1.02143 4.57157 2.28571 4.57157H29.7143C30.9786 4.57157 32 3.55014 32 2.28585Z' />
+            </svg>
+            <span className='p-1'>PT</span>
+          </div>
+        </header>
+        <div className='container mx-auto py-20 px-8'>
+          <section className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-2'>
+            <div>
+              <h2 className='text-main text-3xl font-bold'>AIM</h2>
+              <p className='mb-2'>
+                The Women'5 Frontline Development Conference (W5FDC) aims to
+                bring together leaders, executives, academics, and specialists
+                from the public and private sectors, as well as organisations
+                and corporations, to discuss the relevance and contribution of
+                reducing the gender gap in leadership positions, both at the
+                country and organisational levels, as a development strategy
+                across its various dimensions.
+              </p>
+              <h2 className='text-main text-3xl font-bold'>OBJECTIVE</h2>
+              <p>
+                The panels will focus on the characterisation of the gender gap
+                in corporate leadership and development, the advantages of
+                female leadership in a country's development and corporate
+                performance, and the impact of gender equality on overall
+                sustainability.
+              </p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <div className='flex mb-6'>
+                <Image
+                  width={600}
+                  src={W5FDCLogo}
+                  alt='Sprowt Logo website-01'
+                />
+              </div>
+
+              <a
+                className='px-8 py-3 bg-[#C18743] rounded-xl font-bold'
+                href='http://'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                BOOK TICKETS
+              </a>
+            </div>
+          </section>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <footer className='bg-main py-12 px-8 text-white'>
+        <div className='container mx-auto flex flex-col gap-8 lg:gap-8 lg:flex-row justify-between '>
+          <div className='flex flex-col lg:flex-row items-center'>
+            <span className='mr-4 font-semibold mb-8 lg:mb-0'>Countdown</span>
+            <div className='flex'>
+              <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
+                <span className='absolute -top-6 text-white text-sm font-normal'>
+                  DAYS
+                </span>
+                03
+              </div>
+              <span className='px-2'>:</span>
+              <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
+                <span className='absolute -top-6 text-white text-sm font-normal'>
+                  HOURS
+                </span>
+                22
+              </div>
+              <span className='px-2'>:</span>
+              <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
+                <span className='absolute -top-6 text-white text-sm font-normal'>
+                  MINUTES
+                </span>
+                02
+              </div>
+              <span className='px-2'>:</span>
+              <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
+                <span className='absolute -top-6 text-white text-sm font-normal'>
+                  SECONDS
+                </span>
+                27
+              </div>
+            </div>
+          </div>
+          <div className='flex flex-col lg:flex-row gap-4 items-center'>
+            <span className='font-semibold'>Partners</span>
+            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-white flex justify-center items-center px-4 rounded-xl'>
+              <Image
+                className='h-full object-contain'
+                src={SprowtLogo}
+                alt='Sprowt Logo website-01'
+              />
+            </div>
+            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-white flex justify-center items-center px-4 rounded-xl'>
+              <Image
+                className='h-full object-contain'
+                src={PioneerLogo}
+                alt='Pioneer Logo-01'
+              />
+            </div>
+            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-white flex justify-center items-center px-4 rounded-xl'>
+              <Image
+                className='h-full object-contain'
+                src={BRICSLogo}
+                alt='BRICS WBA SA'
+              />
+            </div>
+            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-[#FF1A0F] flex justify-center items-center px-4 rounded-xl'>
+              <Image
+                className='h-full object-contain'
+                src={SDG5Logo}
+                alt='SDG 5'
+              />
+            </div>
+            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-[#071B8A] flex justify-center items-center px-4 rounded-xl'>
+              <Image
+                className='h-full object-contain'
+                src={SDG17Logo}
+                alt='SDG 17'
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
-  )
+  );
 }
