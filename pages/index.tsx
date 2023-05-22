@@ -1,30 +1,50 @@
+import { Josefin_Sans, Montserrat } from 'next/font/google';
 import Image from 'next/image';
-import BRICSLogo from '../assets/images/brics.jpg';
 import W5FDCLogo from '../assets/images/Logo-W.png';
-import WDLogo from '../assets/images/logo.png';
 import PioneerLogo from '../assets/images/Pioneer.png';
-import SDG17Logo from '../assets/images/SDG 17.jpg';
-import SDG5Logo from '../assets/images/SDG 5.jpg';
+import SDG17Logo from '../assets/images/SDG17.jpg';
+import SDG5Logo from '../assets/images/SDG5.jpg';
 import SprowtLogo from '../assets/images/Sprowt.png';
 import BGLogo from '../assets/images/bg.png';
-import { Inter } from 'next/font/google';
+import BRICSLogo from '../assets/images/brics.jpg';
+import WDLogo from '../assets/images/logo.png';
 
-const inter = Inter({ subsets: ['latin'] });
+import Head from 'next/head';
+const montserrat = Montserrat({ subsets: ['latin'] });
+const josefin = Josefin_Sans({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col'>
+    <main className={`flex min-h-screen flex-col ${josefin.className}`}>
+      <Head>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <title>W5FDC</title>
+        <link rel='icon' type='image/png' href='/W5FDC-.png' />
+      </Head>
       <div
         className={`flex-1 flex flex-col justify-center pt-8`}
         style={{ background: `url(${BGLogo.src}) center / cover` }}
       >
         <header className='container mx-auto flex justify-between items-center lg:items-start px-8'>
-          <div className='flex flex-col'>
-            <Image width={200} src={WDLogo} alt='Sprowt Logo website-01' />
-            <span className='self-end -mt-4 font-medium text-xl'>
-              JUNE 21, 2023
-            </span>
+          <div className='flex items-center'>
+            <div className='flex flex-col mr-8'>
+              <Image width={200} src={WDLogo} alt='Sprowt Logo website-01' />
+              <span className={`self-end -mt-2 font-medium text-xl `}>
+                JUNE 21, 2023
+              </span>
+            </div>
+            <Image
+              className='w-16 ml-4 object-contain'
+              src={SDG5Logo}
+              alt='SDG 5'
+            />
+            <Image
+              className='w-16 ml-4 object-contain'
+              src={SDG17Logo}
+              alt='SDG 17'
+            />
           </div>
+
           <div className='flex'>
             <svg
               width='32'
@@ -39,11 +59,15 @@ export default function Home() {
           </div>
         </header>
         <div className='container mx-auto py-20 px-8'>
-          <section className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-2'>
+          <section className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <div>
-              <h2 className='text-main text-3xl font-bold'>AIM</h2>
-              <p className='mb-2'>
-                The Women'5 Frontline Development Conference (W5FDC) aims to
+              <h2
+                className={`text-main text-3xl font-bold ${montserrat.className}`}
+              >
+                AIM
+              </h2>
+              <p className={`mb-8`}>
+                The Women{"'"}5 Frontline Development Conference (W5FDC) aims to
                 bring together leaders, executives, academics, and specialists
                 from the public and private sectors, as well as organisations
                 and corporations, to discuss the relevance and contribution of
@@ -51,11 +75,15 @@ export default function Home() {
                 country and organisational levels, as a development strategy
                 across its various dimensions.
               </p>
-              <h2 className='text-main text-3xl font-bold'>OBJECTIVE</h2>
+              <h2
+                className={`text-main text-3xl font-bold ${montserrat.className}`}
+              >
+                OBJECTIVE
+              </h2>
               <p>
                 The panels will focus on the characterisation of the gender gap
                 in corporate leadership and development, the advantages of
-                female leadership in a country's development and corporate
+                female leadership in a country{"'"}s development and corporate
                 performance, and the impact of gender equality on overall
                 sustainability.
               </p>
@@ -71,8 +99,7 @@ export default function Home() {
 
               <a
                 className='px-8 py-3 bg-[#C18743] rounded-xl font-bold'
-                href='http://'
-                target='_blank'
+                href='https://www.bilhetesonline.co.mz/#/evento/show/c4e78628-27e5-4bcc-aaa5-3623de38bea3'
                 rel='noopener noreferrer'
               >
                 BOOK TICKETS
