@@ -10,10 +10,41 @@ import BRICSLogo from '../assets/images/brics.jpg';
 import WDLogo from '../assets/images/logo.png';
 
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 const montserrat = Montserrat({ subsets: ['latin'] });
 const josefin = Josefin_Sans({ subsets: ['latin'] });
 
 export default function Home() {
+  const targetDate = new Date('June 21, 2023').getTime();
+  const [timeLeft, setTimeLeft] = useState<number>(
+    targetDate - new Date().getTime()
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = targetDate - now;
+
+      if (timeRemaining > 0) {
+        setTimeLeft(timeRemaining);
+      } else {
+        setTimeLeft(0);
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
   return (
     <main className={`flex min-h-screen flex-col ${josefin.className}`}>
       <Head>
@@ -112,33 +143,33 @@ export default function Home() {
         <div className='container mx-auto flex flex-col gap-8 lg:gap-8 lg:flex-row justify-between '>
           <div className='flex flex-col lg:flex-row items-center'>
             <span className='mr-4 font-semibold mb-8 lg:mb-0'>Countdown</span>
-            <div className='flex'>
+            <div className='flex items-center gap-1'>
               <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
                 <span className='absolute -top-6 text-white text-sm font-normal'>
                   DAYS
                 </span>
-                03
+                {days}
               </div>
               <span className='px-2'>:</span>
               <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
                 <span className='absolute -top-6 text-white text-sm font-normal'>
                   HOURS
                 </span>
-                22
+                {hours}
               </div>
               <span className='px-2'>:</span>
               <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
                 <span className='absolute -top-6 text-white text-sm font-normal'>
                   MINUTES
                 </span>
-                02
+                {minutes}
               </div>
               <span className='px-2'>:</span>
               <div className='bg-white h-12 w-12 text-main font-bold text-3xl flex justify-center items-center relative'>
                 <span className='absolute -top-6 text-white text-sm font-normal'>
                   SECONDS
                 </span>
-                27
+                {seconds}
               </div>
             </div>
           </div>
@@ -163,20 +194,6 @@ export default function Home() {
                 className='h-full object-contain'
                 src={BRICSLogo}
                 alt='BRICS WBA SA'
-              />
-            </div>
-            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-[#FF1A0F] flex justify-center items-center px-4 rounded-xl'>
-              <Image
-                className='h-full object-contain'
-                src={SDG5Logo}
-                alt='SDG 5'
-              />
-            </div>
-            <div className='w-32 lg:w-28 h-16 lg:h-full object-contain bg-[#071B8A] flex justify-center items-center px-4 rounded-xl'>
-              <Image
-                className='h-full object-contain'
-                src={SDG17Logo}
-                alt='SDG 17'
               />
             </div>
           </div>
